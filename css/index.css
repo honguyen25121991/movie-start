@@ -1,0 +1,479 @@
+/* GLOBAL */
+
+htnl,
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  color: #717171;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+.line::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  position: absolute;
+  bottom: -1px;
+  left: 0px;
+  transition: all 0.5s;
+}
+.section__title {
+  color: #ec7532;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 15px;
+  position: relative;
+}
+
+/* HEADER */
+
+header {
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#movieNavbar .navbar-nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#movieNavbar .nav-item {
+  position: relative;
+}
+#movieNavbar .nav-item.active::after,
+#movieNavbar .nav-item:hover::after {
+  width: 100%;
+}
+
+/* END HEADER */
+
+/* MOVIE CAROUSEL */
+
+#movieCarosel .carousel-caption {
+  text-align: left;
+  /* công thức canh giữa theo position  absolute
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: transparent;
+  opacity: 1;
+}
+
+.carousel-indicators li.active {
+  background: white;
+}
+
+#movieCarosel .carousel-indicators {
+  justify-content: flex-start;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* bị dư margin */
+  margin-left: 0;
+  margin-right: 0;
+  /* bị thiếu padding */
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.carousel-inner .title {
+  color: #fbbd61;
+  font-size: 14px;
+}
+.carousel-inner p {
+  font-size: 18px;
+  padding-right: 10%;
+}
+.movieCarousel__trailer span {
+  width: 40px;
+  height: 40px;
+  border: solid white;
+  line-height: 40px;
+}
+.btn-orange {
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  border-radius: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.movie__title.line::after {
+  width: 160px;
+}
+/* END MOVIE CAROUSEL */
+/* NEWIN MOVIE */
+.newIn {
+  padding-top: 50px;
+}
+.newIn .line::after {
+  width: 120px;
+}
+.newIn__img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.newIn__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.newIn__play a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  margin-block: 15px;
+}
+.newIn__play i {
+  width: 80px;
+  height: 80px;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 15px auto;
+  line-height: 80px;
+}
+.newIn__play span {
+  font-size: 16px;
+}
+.newIn__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 199%;
+  height: 100%;
+  background: linear-gradient(to bottom, #fbbd61, #ec7532);
+  transform: skewX(30deg) translateX(-150%);
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.newIn__img:hover .newIn__overlay {
+  transform: skewX(30deg) translateX(-30%);
+}
+.newIn__img:hover .newIn__play {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.newIn__movie {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: black;
+}
+.newIn__movie .movie__stars {
+  color: #ec7532;
+}
+/* END NEWIN */
+/* SHOW TIME */
+.showTime {
+  padding-top: 80px;
+}
+
+.showTime .nav-tabs .nav-link {
+  position: relative;
+  color: #4a4a4a;
+  padding: 10px 30px;
+}
+
+.showTime .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active,
+.showTime .nav-tabs .nav-link:hover {
+  border: white;
+}
+.showTime .nav-tabs .nav-link.active.line::after,
+.showTime .nav-tabs .nav-link:hover.line::after {
+  width: 100%;
+}
+
+#showTime .nav-item a:focus {
+  color: #ec7532;
+}
+
+.showTime img {
+  border-radius: 10px;
+}
+.showTime .title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ec7532;
+}
+.showTime h3 {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #101010;
+}
+
+.showTime span a {
+  font-size: 12px;
+  position: relative;
+  letter-spacing: 4px;
+  color: #ec7532;
+}
+.showTime span a:hover {
+  text-decoration: none;
+}
+.view-time {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4a4a4a;
+}
+.view-time i {
+  vertical-align: middle;
+  font-size: 12px;
+}
+.space-10 {
+  display: block;
+  height: 15px;
+  margin: 0;
+  border: none;
+}
+.outime {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 7px 10px;
+  letter-spacing: 2px;
+  color: #717171;
+  border-radius: 5px;
+  background-color: #d8d8d8;
+  opacity: 0.5;
+}
+.time {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 7px 10px;
+  letter-spacing: 2px;
+  color: #717171;
+  border-radius: 5px;
+  background-color: #d8d8d8;
+}
+.time-movie {
+  font-size: 12px;
+  text-align: right;
+  letter-spacing: 1.5px;
+}
+.rate-old {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 33px;
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  margin-left: 5px;
+  text-align: center;
+  letter-spacing: 0;
+  color: #fff;
+  border-radius: 50%;
+  background: #4a4a4a;
+}
+/* END SHOW TIME  */
+/* COMING SOON */
+.comingSoon {
+  background-color: black;
+}
+.comingsoon__bg {
+  padding: 80px 0;
+  background-image: url(../images/slide-3.png);
+  background-size: cover;
+  background-position: center center;
+}
+.comingsoon__bg .section__title {
+  color: white;
+}
+.comingsoon__bg .line::after {
+  width: 160px;
+}
+
+.coming__detail > span {
+  color: #ec7532;
+  font-size: 14px;
+}
+.coming__detail > h2 {
+  font-size: 34px;
+}
+.coming__detail .fa-star {
+  font-size: 14px;
+  color: #fbbd61;
+}
+.coming__date {
+  opacity: 0.75;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.coming__detail > a {
+  letter-spacing: 3px;
+  color: #ec7532;
+}
+.coming__trailer {
+  position: relative;
+}
+.coming__trailer i {
+  color: white;
+  display: block;
+  height: 84px;
+  width: 84px;
+  border: 2px solid #ec7532;
+  border-radius: 50%;
+  text-align-last: center;
+  line-height: 84px;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(35%, -50%);
+}
+
+/* END COMING SOON  */
+
+/* MOVIE LIST  */
+.movieList {
+  padding-top: 70px;
+  background-color: #101010;
+  opacity: 0.9;
+}
+
+.movie__items {
+  font-size: 16px;
+  padding: 0 5px;
+}
+.movie__items img {
+  border-radius: 10px;
+  width: 100%;
+}
+.movieList .movie__items:hover span {
+  opacity: 1;
+  color: white;
+}
+.movieList .movie__items:hover img {
+  opacity: 1;
+  color: white;
+}
+/* END MOVIE LIST */
+/* CONTACT */
+.contact {
+  padding: 50px 0;
+}
+.contact .info p {
+  font-size: 23px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  color: black;
+}
+.contact .phone p {
+  font-size: 46px;
+  font-weight: 400;
+  color: #f49f4e;
+}
+
+/* END CONTACT */
+/* FOOTER */
+footer {
+  background: #101010;
+  padding-top: 75px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+footer h5 {
+  font-size: 16px;
+  margin: 0;
+  letter-spacing: 2px;
+  color: #ec7532;
+  border: none;
+  padding-bottom: 20px;
+}
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+footer ul li a {
+  list-style-type: none;
+  color: white;
+  font-size: 13px;
+  padding: 3px 0;
+  letter-spacing: 1.5px;
+}
+footer ul li a:hover {
+  text-decoration: none;
+  color: #fbbd61;
+}
+footer ul li a .icon {
+  padding-right: 15px;
+  color: #4a4a4a;
+}
+footer ul li a:hover .icon {
+  color: #fbbd61;
+  transition: all 0.5s;
+}
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer__copyright p {
+  color: white;
+  font-size: 14px;
+  padding: 3px 0;
+  letter-spacing: 1px;
+}
+.footer__copyright a {
+  padding-top: 3px;
+  font-size: 14px;
+  color: white;
+}
+.footer__copyright a:hover {
+  text-decoration: none;
+  color: #ec7532;
+}
+/* END FOOTER */
+/* Đè code thư viện reponsive */
+
+@media screen and (max-width: 576px) {
+  .navbar-expand-lg .navbar-collapse {
+    background-color: black;
+    text-align: center;
+  }
+  #myTabContent img {
+    width: 100%;
+  }
+  .coming__trailer img {
+    background-color: #050202;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-expand-lg .navbar-collapse {
+    background-color: #050202;
+    text-align: center;
+  }
+  .coming__trailer img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    background-color: #050202;
+    text-align: center;
+  }
+}
